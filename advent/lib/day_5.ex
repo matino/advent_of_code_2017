@@ -1,5 +1,4 @@
 defmodule Advent.Day5 do
-
   def solve_part_1(s) do
     s
     |> to_list_of_integers()
@@ -28,6 +27,7 @@ defmodule Advent.Day5 do
 
   defp jump(list, jump_fn, index \\ 0, moves \\ 0) do
     value = Enum.at(list, index)
+
     if value == nil do
       moves
     else

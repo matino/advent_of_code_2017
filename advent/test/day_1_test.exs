@@ -19,7 +19,7 @@ defmodule AdventTest.Day1Test.Part1 do
   end
 
   test "first digit matches the last one" do
-    assert Day1.solve(91212129) == 9
+    assert Day1.solve(91_212_129) == 9
   end
 
   test "no match for single digit" do
@@ -40,14 +40,14 @@ defmodule AdventTest.Day1Test.Part2 do
   end
 
   test "both 2 are matching each other" do
-    assert Day1.solve(123425, 3) == 4
+    assert Day1.solve(123_425, 3) == 4
   end
 
   test "all digits match" do
-    assert Day1.solve(123123, 3) == 12
+    assert Day1.solve(123_123, 3) == 12
   end
 
   test "all 1s match" do
-    assert Day1.solve(12131415, 4) == 4
+    assert Day1.solve(12_131_415, 4) == 4
   end
 end

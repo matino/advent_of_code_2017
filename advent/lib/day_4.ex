@@ -33,12 +33,13 @@ defmodule Advent.Day4 do
   defp no_anagram_words?(passphrase) do
     passphrase_without_anagrams =
       passphrase
-      |> Enum.map(fn(word) ->
+      |> Enum.map(fn word ->
         word
         |> String.graphemes()
         |> Enum.sort()
       end)
       |> Enum.uniq()
+
     length(passphrase_without_anagrams) == length(passphrase)
   end
 end

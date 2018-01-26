@@ -8,6 +8,7 @@ defmodule Advent.Day1 do
   @spec solve(integer) :: integer
   def solve(num, step \\ 1)
   def solve(num, _) when num < 10, do: 0
+
   def solve(num, step) do
     num
     |> int_to_digits()

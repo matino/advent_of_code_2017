@@ -18,7 +18,7 @@ defmodule Advent.Day2 do
     |> to_matrix()
     |> Enum.map(&permutate/1)
     |> Enum.map(&List.flatten/1)
-    |> Enum.map(fn(row) -> Enum.map(row, &divide/1) end)
+    |> Enum.map(fn row -> Enum.map(row, &divide/1) end)
     |> List.flatten()
     |> Enum.sum()
   end
@@ -27,10 +27,11 @@ defmodule Advent.Day2 do
     s
     |> String.split("\n")
     |> Enum.map(&String.split/1)
-    |> Enum.map(fn(row) -> Enum.map(row, &String.to_integer/1) end)
+    |> Enum.map(fn row -> Enum.map(row, &String.to_integer/1) end)
   end
 
   defp max_min_difference([], acc), do: acc
+
   defp max_min_difference(digits, acc) do
     {min, max} = Enum.min_max(digits)
     acc + max - min
@@ -38,7 +39,7 @@ defmodule Advent.Day2 do
 
   defp permutate(digits) do
     digits
-    |> Enum.map(fn(x) -> for digit <- digits, do: {x, digit} end)
+    |> Enum.map(fn x -> for digit <- digits, do: {x, digit} end)
   end
 
   defp divide({x, x}), do: 0
